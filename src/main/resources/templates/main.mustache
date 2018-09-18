@@ -23,20 +23,20 @@
         <button type="submit">Delete</button>
     </form>
 </div>
-<!--<div>-->
-    <!--<form method="post" action="delete">>-->
-        <!--<input type="number" name="deleteById" min="1" required placeholder="Delete message by ID"/>-->
-        <!--<input type="hidden" name="_csrf" value="{{_csrf.token}}"/>-->
-        <!--<button type="submit">Delete</button>-->
-    <!--</form>-->
-<!--</div>-->
 
+<div>
+    <form method="post" action="filter">
+        <input type="text"  name="filter" placeholder="Search">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+        <button type="submit">Find</button>
+    </form>
+</div>
 
 {{#messages}}
     <div>
         <span>№{{id}}</span>
         <strong>({{authorName}})</strong>
-        <!--<i>({{tag}})-</i>-->
+        <i>({{tag}})-</i>
         <b>{{text}}</b>
     </div>
 {{/messages}}
