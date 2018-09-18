@@ -26,11 +26,13 @@
 
 <div>
     <form method="post" action="filter">
-        <input type="text"  name="filter" placeholder="Search">
+        <input type="text"  name="filter" required placeholder="Search">
         <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
         <button type="submit">Find</button>
     </form>
 </div>
+
+
 
 {{#messages}}
     <div>

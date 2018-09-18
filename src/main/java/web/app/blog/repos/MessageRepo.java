@@ -11,7 +11,7 @@ public interface MessageRepo extends CrudRepository<Message, Long> {
     @Transactional
     List<Message> deleteById(Integer deleteById);
 
-//    @Transactional
+    @Transactional
     List<Message> findByTag(String tag);
 
 

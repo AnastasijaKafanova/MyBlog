@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Spring Security Example </title>
+</head>
+Result:
+<p> </p>
+<form action="/filter" method="post">
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+    {{#messages}}
+        <div>
+            <span>№{{id}}</span>
+            <strong>({{authorName}})</strong>
+            <i>({{tag}})-</i>
+            <b>{{text}}</b>
+        </div>
+    {{/messages}}
+</form>
+<form action="/main">
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+    <input type="submit" value="Back" />
+</form>
+
+</body>
+</html>
