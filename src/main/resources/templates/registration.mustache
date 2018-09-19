@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+<!--Title-->
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <a class="navbar-brand" href="/">Blog</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+<!---->
+<!--text style-->
+<meta charset="UTF-8">
+<title>Blog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<!---->
 <head>
     <title>Spring Security Example </title>
 </head>
 <body>
-New user
-<p> </p>
-{{#message}}
-    {{message}}
-{{/message}}
-<form action="/registration" method="post">
-    <div><label> User Name : <input type="text" required name="username"/> </label></div>
-    <div><label> Password: <input type="password" required name="password"/> </label></div>
-    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
-    <p> </p>
-    <div><input type="submit" value="Register"/></div>
-</form>
-<form action="/main">
-    <input style="text-align:center" type="submit" value="Main page" />
-</form>
+<div class="container">
+    New user
+    <p></p>
+    {{#message}}
+        {{message}}
+    {{/message}}
+    <form action="/registration" method="post">
+        <div><label> User Name : <input type="text" required name="username"/> </label></div>
+        <div><label> Password: <input type="password" required name="password"/> </label></div>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+        <p></p>
+        <div><input type="submit" value="Register"/></div>
+    </form>
+    <form action="/main">
+        <input style="text-align:center" type="submit" value="Main page"/>
+    </form>
+</div>
 </body>
 </html>
