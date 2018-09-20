@@ -45,12 +45,21 @@
     </div>
 
     <div>
+        <form method="post" action="findById">
+            <input type="text" name="findById" required placeholder="SearchById">
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+            <button type="submit">Find</button>
+        </form>
+    </div>
+
+    <div>
         <form method="post" action="filter">
             <input type="text" name="filter" required placeholder="Search">
             <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
             <button type="submit">Find</button>
         </form>
     </div>
+
 
     {{#messages}}
         <div>

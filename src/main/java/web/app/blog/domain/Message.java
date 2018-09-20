@@ -31,6 +31,7 @@ public class Message {
         this.tag = tag;
     }
 
+
     public String getAuthorName() {
         return author != null ? author.getUsername() : "<none>";
     }
@@ -63,8 +64,9 @@ public class Message {
         return tag;
     }
 
-    public void setTag(String tag) {
+    public void setTag() {
         this.tag = tag;
     }
+
 
 }

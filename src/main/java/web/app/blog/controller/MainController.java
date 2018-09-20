@@ -4,14 +4,13 @@ package web.app.blog.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import web.app.blog.domain.Message;
 import web.app.blog.domain.User;
 import web.app.blog.repos.MessageRepo;
 
 
+import java.util.List;
 import java.util.Map;
 
 import static java.lang.Integer.parseInt;
@@ -71,5 +70,35 @@ public class MainController {
         }
         return "filter";
     }
+
+    @PostMapping("/findById")
+    public String findById(Integer findById,
+                           Map<String, Object> model) {
+        Iterable<Message> messages;
+        messages = messageRepo.findById(findById);
+        model.put("messages", messages);
+        model.put("id", ((List<Message>) messages).get(0).getId());
+        return "findById";
+    }
+
+    @PostMapping("/findByIdTest")
+    public String findByIdTest(@RequestParam Integer id, @RequestParam String text,
+                           Map<String, Object> model) {
+        Iterable<Message> messages;
+        messages = messageRepo.findById(id);
+        Message message = ((List<Message>) messages).get(0);
+
+        message.setText(text);
+
+        messageRepo.save(message);
+
+        model.put("messages", messages);
+       //model.put("id", ((List<Message>) messages).get(0).getId());
+        return "redirect:/main";
+    }
+
+
+
+
 }
 
