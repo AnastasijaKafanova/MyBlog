@@ -14,7 +14,6 @@ public class Message {
     private Integer id;
 
     private String text;
-    private String text2;
     private String tag;
 
 
@@ -68,11 +67,4 @@ public class Message {
         this.tag = tag;
     }
 
-    public String getText2() {
-        return text2;
-    }
-
-    public void setText2(String text2) {
-        this.text2 = text2;
-    }
 }
