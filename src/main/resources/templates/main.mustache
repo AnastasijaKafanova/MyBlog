@@ -46,7 +46,7 @@
 
     <div>
         <form method="post" action="findById">
-            <input type="text" name="findById" required placeholder="SearchById">
+            <input type="number" name="findById"  min="1" required placeholder="SearchById">
             <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
             <button type="submit">Find</button>
         </form>
