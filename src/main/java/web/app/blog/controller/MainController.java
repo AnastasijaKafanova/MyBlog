@@ -76,8 +76,8 @@ public class MainController {
                            Map<String, Object> model) {
         Iterable<Message> messages;
         messages = messageRepo.findById(findById);
-        Message message = ((List<Message>) messages).get(0);
-        // Message message =  ((List<Message>) messages).get(0);
+//        Message message = ((List<Message>) messages).get(0);
+//        // Message message =  ((List<Message>) messages).get(0);
         if (((List<Message>) messages).size() != 0) {
             model.put("messages", messages);
             model.put("id", ((List<Message>) messages).get(0).getId());
@@ -91,12 +91,10 @@ public class MainController {
     @PostMapping("/findByIdTest")
     public String findByIdTest(@AuthenticationPrincipal User user, @RequestParam Integer id, @RequestParam String text,
                                Map<String, Object> model) {
-
         Iterable<Message> messages;
-
         messages = messageRepo.findById(id);
         Message message = ((List<Message>) messages).get(0);
-        if(user.getUsername().equals(message.getAuthor().getUsername())){
+        if (user.getUsername().equals(message.getAuthor().getUsername())) {
             message.setText(text);
             messageRepo.save(message);
             model.put("messages", messages);

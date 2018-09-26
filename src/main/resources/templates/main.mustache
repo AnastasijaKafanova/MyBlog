@@ -1,5 +1,6 @@
 <html>
 <!--Title-->
+<body style="background-color:powderblue;">
 <nav class="navbar navbar-expand-lg navbar-light bg-info">
     <a class="navbar-brand" href="/">Blog</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -21,10 +22,12 @@
 <body>
 <div class="container">
     <div>
+
         <form method="post">
             <p></p>
-            <input type="text" required name="text" placeholder="Your message"/>
-            <input type="text" name="tag" placeholder="Tag">
+            <input type="text" required name="text" placeholder="Enter your message:"/>
+            #
+            <input type="text" name="tag" required placeholder="Enter your TAG:">
             <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
             <button type="submit">Publish</button>
         </form>
@@ -37,6 +40,7 @@
     </div>
 
     <div>
+        You can delete message that you don't like (by message ID):
         <form method="post" action="delete">>
             <input type="number" name="deleteById" min="1" required placeholder="Delete message by ID"/>
             <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
@@ -45,16 +49,18 @@
     </div>
 
     <div>
+        You can find message (by message ID) and update text. It need to be your message!
         <form method="post" action="findById">
-            <input type="number" name="findById"  min="1" required placeholder="SearchById">
+            <input type="text" name="findById" required placeholder="Find/Update by ID">
             <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
             <button type="submit">Find</button>
         </form>
     </div>
 
     <div>
+        You can find message (by message TAG):
         <form method="post" action="filter">
-            <input type="text" name="filter" required placeholder="Search">
+            <input type="text" name="filter" required placeholder="Find bu TAG:">
             <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
             <button type="submit">Find</button>
         </form>
@@ -65,7 +71,7 @@
         <div>
             <span>№{{id}}</span>
             <strong>({{authorName}})</strong>
-            <i>({{tag}})-</i>
+            <i>(#{{tag}})-</i>
             <b>{{text}}</b>
         </div>
     {{/messages}}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+<body style="background-color:powderblue;">
 <!--Title-->
 <nav class="navbar navbar-expand-lg navbar-light bg-info">
     <a class="navbar-brand" href="/">Blog</a>
@@ -24,50 +25,49 @@
 <body>
 <div class="container">
     Result:
-    <p> </p>
-<!--<form action="/findById" method="post">-->
+    <p></p>
+    <!--<form action="/findById" method="post">-->
     <!--<input type="hidden" name="_csrf" value="{{_csrf.token}}"/>-->
-    <!--{{#messages}}-->
-        <!--<div>-->
-            <!--<span>№{{id}}</span>-->
-            <!--<strong>({{authorName}})</strong>-->
-            <!--<i>({{tag}})-</i>-->
-            <!--<b>{{text}}</b>-->
-        <!--</div>-->
-    <!--{{/messages}}-->
+        <!--{{#messages}}-->
+    <!--<div>-->
+    <!--<span>№{{id}}</span>-->
+    <!--<strong>({{authorName}})</strong>-->
+    <!--<i>({{tag}})-</i>-->
+    <!--<b>{{text}}</b>-->
+    <!--</div>-->
+        <!--{{/messages}}-->
     <form action="/findById" method="post">
-    <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
-    {{#messages}}
-        <div>
-            <span>№{{id}}</span>
-            <strong>({{authorName}})</strong>
-            <i>({{tag}})-</i>
-            <b>{{text}}</b>
-        </div>
-    {{/messages}}
-</form>
-</form>
-
-<div>
-    <form action="/findByIdTest" method="post">
-        <p></p>
-{{#messages}}
-
-
-        <input type="text" required name="text"  placeholder="Your message"/>
-       <!-- <input type="text" name="tag" placeholder="Tag">-->
-        <input type="hidden" name="id" value=" {{id}}">
         <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
-        <button type="submit">Save</button>
-{{/messages}}
+        {{#messages}}
+            <div>
+                <span>№{{id}}</span>
+                <strong>({{authorName}})</strong>
+                <i>(#{{tag}})-</i>
+                <b>{{text}}</b>
+            </div>
+        {{/messages}}
     </form>
-</div>
+    </form>
 
+    <div>
+        <form action="/findByIdTest" method="post">
+            <p></p>
+            {{#messages}}
+
+                Updete your message:
+                <input type="text" required name="text" placeholder="Update message text:"/>
+                <!-- <input type="text" name="tag" placeholder="Tag">-->
+                <input type="hidden" name="id" value=" {{id}}">
+                <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+                <button type="submit">Save</button>
+            {{/messages}}
+        </form>
+    </div>
 
 
     <form action="/main">
         <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
-        <input type="submit" value="Back" />
+        <input type="submit" value="Back"/>
     </form>
 </div>
 </body>

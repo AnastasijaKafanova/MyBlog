@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+<body style="background-color:powderblue;">
 <!--Title-->
 <nav class="navbar navbar-expand-lg navbar-light bg-info">
     <a class="navbar-brand" href="/">Blog</a>
@@ -29,9 +30,10 @@ Login page
     <div><label> User Name: <input type="text" required name="username"/> </label></div>
     <div><label> Password: <input type="password" required name="password"/> </label></div>
     <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
-    <p> </p>
     <div><input type="submit" value="Sign In"/></div>
 </form>
+    <p> </p>
+    If you do not have your own page, please register:
 <form action="/registration">
     <input style="text-align:center" type="submit" value="Go to Registration" />
 </form>

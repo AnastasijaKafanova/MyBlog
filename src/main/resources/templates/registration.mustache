@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+<body style="background-color:powderblue;">
 <!--Title-->
 <nav class="navbar navbar-expand-lg navbar-light bg-info">
     <a class="navbar-brand" href="/">Blog</a>
@@ -23,11 +24,11 @@
 </head>
 <body>
 <div class="container">
-    New user
-    <p></p>
+    New user:
     {{#message}}
         {{message}}
     {{/message}}
+    <p></p>
     <form action="/registration" method="post">
         <div><label> User Name : <input type="text" required name="username"/> </label></div>
         <div><label> Password: <input type="password" required name="password"/> </label></div>

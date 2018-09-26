@@ -26,7 +26,7 @@ public class RegistrationController {
         User userFromDb = userRepo.findByUsername(user.getUsername());
 
         if (userFromDb != null) {
-            model.put("message", "User exists!");
+            model.put("message", "User exists! Please, try one more time!");
             return "registration";
         }
         if(user.getUsername() == ""){
