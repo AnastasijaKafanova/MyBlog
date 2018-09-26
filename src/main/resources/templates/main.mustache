@@ -1,6 +1,6 @@
 <html>
 <!--Title-->
-<body style="background-color:powderblue;">
+<body style="background-color:aliceblue;"/>
 <nav class="navbar navbar-expand-lg navbar-light bg-info">
     <a class="navbar-brand" href="/">Blog</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -26,7 +26,6 @@
         <form method="post">
             <p></p>
             <input type="text" required name="text" placeholder="Enter your message:"/>
-            #
             <input type="text" name="tag" required placeholder="Enter your TAG:">
             <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
             <button type="submit">Publish</button>
@@ -71,7 +70,7 @@
         <div>
             <span>№{{id}}</span>
             <strong>({{authorName}})</strong>
-            <i>(#{{tag}})-</i>
+            <i>({{tag}})-</i>
             <b>{{text}}</b>
         </div>
     {{/messages}}
